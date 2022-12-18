@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>HTML Form</title>
+    </head>
+    <body>
+        <p style="border: 1px solid">welcome to cse502!</p>
+        <span style="border: 1px solid">Hello World</span>
+        <span>Thank you</span><br><br>
+
+        <form>
+            <label for="Fname">First Name: </label>
+            <input type="text" id="Fname" name="FN">
+            <br><br>
+
+            <label for= "Lname">Last Name: </label>
+            <input type="text" id="Lname" name="LN">
+            <br><br>
+
+            <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>
+            
+
+            <label>Job type<br></label>
+            
+            <input type="radio" id="Part" name="jobtype1" value="Part-time">
+            <label for="Part">PartTime</label>
+            <br>
+
+            
+            <input type="radio" id="Full" name="jobtype2" value="Full-time">
+            <label for="Full">FullTime</label>
+            <br><br>
+
+            Gender<br>
+            <input type="radio" id="Male" name="gender" value="Male">
+            <label for="Male">Male</label><br>
+            <input type="radio" id="Female" name="gender" value="Female">
+            <label for="Female">Female</label>
+            <br><br>
+
+            Which Topic do you want to learn?<br>
+            <input type="checkbox" id="Topic1" value="Topic1" name="HTML">
+            <label for=""topic1>HTML</label><br>
+            <input type="checkbox" id="Topic2" value="Topic2" name="HTML">
+            <label for=""topic2>CSS</label><br>
+            <input type="checkbox" id="Topic3" value="Topic3" name="PHP">
+            <label for=""topic3>PHP</label><br>
+
+            <label for="cars">Choose a car: </label>
+            <select id="cars" name="cars">
+                <option value="valvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Audi">Audi</option>
+
+            </select>
+            <br><br>
+
+            <label for="EduLevel">Choose Education Level</label>
+            <select id="EduLevel" name="EduLevel">
+                <option value="SSC">SSC</option>
+                <option value="HSC">HSC</option>
+                <option value="Honors">Honors</option>
+                <option value="Masters">Masters</option>
+
+            </select>
+            <br><br>
+
+            Please Give us a rate<br>
+            <textarea name="Feedback" id="FDK" cols="30" rows="10"></textarea>
+
+
+
+            <br><br>
+            <input type="submit">
+            <br><br>
+
+
+        </form>
+    </body>
+</html>
