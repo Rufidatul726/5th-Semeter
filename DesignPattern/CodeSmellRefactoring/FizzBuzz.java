@@ -1,43 +1,22 @@
 package workshop;
+
+import java.util.List;
+
 public class FizzBuzz {
     public static String say(int number) {
-        String strReturn = null;
+        List<String> words = List.of("Fizz", "Buzz");
+        List<Integer> numbers = List.of(3, 5);
 
-        if(DivisibleByThree(number) && DivisibleByFive(number))
-        {
-            strReturn = "FizzBuzz";
+        String result = "";
+        for (int i = 0; i < words.size(); i++) {
+            if (number % numbers.get(i) == 0) {
+                result += words.get(i);
+            }
         }
-        else if(DivisibleByThree(number))
-        {
-            strReturn = "Fizz";
+        if (result.isEmpty()) {
+            result = String.valueOf(number);
         }
-        else if(DivisibleByFive(number))
-        {
-            strReturn = "Buzz";
-        }
-        else
-        {
-            strReturn = String.valueOf(number);
-        }
-
-        return strReturn;
+        return result;
     }
-
-    public static boolean DivisibleByThree(int number) {
-        if(number % 3== 0)
-            return true;
-        else
-            return false;
-    }
-
-    public static boolean DivisibleByFive(int number) {
-        if(number % 5== 0)
-            return true;
-
-        else
-            return false;
-    }
-
-
 
 }
