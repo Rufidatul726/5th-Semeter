@@ -28,8 +28,6 @@ public class PlaintextToHtmlConverter {
         result = new ArrayList<>();
         convertedLine = new ArrayList<>();
         characterToConvert = GetIndexCharacterAndIncrementPointer();
-        String[] symbols = new String[] { "<", ">", "&"};
-        String[] htmlSymbols = new String[] { "&lt;", "&gt;", "&amp;"};
 
         while (i <= this.source.length()) {
             convertedLine.add(MatchCharacter(characterToConvert));
@@ -43,15 +41,13 @@ public class PlaintextToHtmlConverter {
     }
 
     private String MatchCharacter(String characterToConvert) {
-        String[] symbols = new String[] { "<", ">", "&"};
-        String[] htmlSymbols = new String[] { "&lt;", "&gt;", "&amp;"};
+        List<String> characters = List.of("<", ">", "&");
+        List<String> htmlCharacters = List.of("&lt;", "&gt;", "&amp;");
 
-        for(int j = 0; j < symbols.length; j++) {
-            if (characterToConvert.equals(symbols[j])) {
-                return htmlSymbols[j];
-            }
+        if(characters.contains(characterToConvert)) {
+            return htmlCharacters.get(characters.indexOf(characterToConvert));
         }
-        if (characterToConvert.equals("\n")){
+        else if (characterToConvert.equals("\n")){
             addANewLine();
         }
         else pushACharacterToTheOutput();
