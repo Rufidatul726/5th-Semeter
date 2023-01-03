@@ -5,8 +5,13 @@ public class TonerSaveMode extends PrintMode{
     private String tonerSavingLevel;
 
     @Override
-    public void saveToner() {
+    public void saveToner() {   //long method
+        int colorIntensity;
+
         if(tonerSavingLevel=="High"){
+            colorIntensity=this.getColor_intensity();
+            colorIntensity--;
+            setColor_intensity(colorIntensity);
             //color intensity is reduced by following a well-known standard algorithm
         }
         else if(tonerSavingLevel=="Medium"){
@@ -26,5 +31,7 @@ public class TonerSaveMode extends PrintMode{
     public void boost() {
 
     }
+
+
 
 }

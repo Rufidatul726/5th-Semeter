@@ -4,9 +4,9 @@ public abstract class PrintMode {
     private int number_of_pages;
     private int page_size;
     private String orientation;
-    private String color_intensity;
+    private int color_intensity;
     private int cost_per_page;
-
+    //primitive Obsession
     public abstract void saveToner();
     public abstract void savePage();
     public abstract void boost();
@@ -40,7 +40,8 @@ public abstract class PrintMode {
         return color_intensity;
     }
 
-    public void setColor_intensity(String color_intensity) {
+    public void setColor_intensity(int color_intensity) {
+
         this.color_intensity = color_intensity;
     }
 

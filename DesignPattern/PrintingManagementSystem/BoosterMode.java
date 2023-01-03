@@ -1,6 +1,8 @@
 import java.util.List;
 
 public class BoosterMode extends PrintMode{
+    int intensityThreshold;
+    int maxIntensity=10;
     @Override
     public void saveToner() {
 
@@ -13,11 +15,12 @@ public class BoosterMode extends PrintMode{
 
     @Override
     public void boost() {
+
         setColor_intensity(intensityThreshold());
     }
 
-    public String intensityThreshold(){
-        List<String> intensity = List.of("High", "Medium", "low");
-        return intensity.get(0);
+    public int intensityThreshold(){
+        maxIntensity= intensityThreshold;
+        return intensityThreshold;
     }
 }
