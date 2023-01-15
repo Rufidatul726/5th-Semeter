@@ -1,12 +1,13 @@
 public class Main {
-
     public static void main(String[] args) {
-        Singleton singleton= Singleton.getInstance();
 
-        singleton.showNotification();
+        System.out.println("Hello world!");
 
-        FactoryMethod
+        NotificationFactory notificationFactory = NotificationFactory.getInstance();
+        notificationFactory.createNotification("Email").notifyUser();
 
+        NotificationFactory notificationFactory2 = NotificationFactory.getInstance();
+        notificationFactory2.createNotification("Push").notifyUser();
 
     }
 }
