@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <div id="div1">
+            <p id="p1">This is element 1</p>
+            <p id="p2">This is element 2</p>
+            <p id="p3">This is element 3</p>
+        </div>
+
+        <script>
+            let newElement= document.createElement("p");
+            newElement.innerText="New element\n";
+            document.body.appendChild(newElement);
+
+            let removeElement=document.getElementById("p1");
+            removeElement.remove();
+
+            const rmvChild = document.getElementById("div1");
+            rmvChild.removeChild(rmvChild.firstElementChild);
+
+            let newNode= document.createElement("p");
+            //let textNode= document.createTextNode("paragraph 1 inserted!");
+            let textNode= document.createTextNode(newElement.innerText);
+            newElement.appendChild(textNode);
+
+            const insertChild= document.getElementById("p3");
+            insertChild.insertBefore(newNode, insertChild.children[0]);
+
+        </script>
+    </body>
+</html>
