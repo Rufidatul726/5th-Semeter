@@ -1,42 +1,141 @@
 <html>
+    <head>
+        <style>
+            div{
+                border: 1px solid black;
+                width: 33.17%;
+                float: left;
+                height: 40%;
+                display: flex;
+                flex-wrap: wrap-reverse;
+                justify-content: center;
+                align-items: flex-start;  
+            }
+            p{
+                border: 1px solid black;
+                width: 98%;
+                height: 10%;
+                float: middle;
+                text-align: center;
+               
+            } 
+
+
+        </style>
+    </head>
    
     <body>
         
-        <div id="div1" style="border: 1px solid black; width: 30%; float: left; height: 30%;">
-            <p id="p2"  style="border: 1px solid black; width: 95%; float: left; text-align: center;">2</p>            
-            <p id="p4" style="border: 1px solid black; width: 95%; float: left; text-align: center;">4</p>           
-            <p id="p3" style="border: 1px solid black; width: 95%; float: left; text-align: center;">3</p>           
-            <p id="p1" style="border: 1px solid black; width: 95%; float: left; text-align: center;">1</p>
+        <div id="div1">
+            <p id="p2"  >2</p>            
+            <p id="p4" >4</p>           
+            <p id="p3" >3</p>           
+            <p id="p1" >1</p>
         </div>
 
-        <div id="div2"  style="border: 1px solid black; width: 30%; float: left; height: 30%;">
-            <br>
+        <div id="div2">
+           
         </div>
 
-        <div id="div3"  style="border: 1px solid black; width: 30%; float: left; height: 30%;">
-            <br>
+        <div id="div3">
+           
         </div>
-       
-        <div id="d12" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button1Click()">1->2</button></div>
-        <div id="d23" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button>2->3</button></div>
-        <div id="d31" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button>3->1</button></div>
-        <div id="d32" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button>3->2</button></div>
-        <div id="d21" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button>2->1</button></div>
-        <div id="d13" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button>1->3</button></div>
+        <p style="border: none; width: 98%; padding-top: 20%;"></p>
+
+        <div id="d12" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button12Click()">1->2</button></div>
+        <div id="d23" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button23Click()">2->3</button></div>
+        <div id="d31" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button31Click()">3->1</button></div>
+        <div id="d32" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button32Click()">3->2</button></div>
+        <div id="d21" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button21Click()">2->1</button></div>
+        <div id="d13" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button13Click()">1->3</button></div>
 
 
         <script>
-            function button1Click(){
+            function button12Click(){
                 let fetchElement=document.getElementById("div1");
-                let click=fetchElement.firstElementChild.textContent;
+                let click=fetchElement.lastElementChild.textContent;
                 console.log(click);
                 let newElement= document.createElement("p");
-                let newText= document.createTextNode(click.innerText);
+                let newText= document.createTextNode(click);
                 const dest= document.getElementById("div2");
-                //dest.appendChild(newText);
-                newElement.insertBefore(newText, );
-                fetchElement.removeChild(fetchElement.firstElementChild);
+                
+                newElement.appendChild(newText);
+                dest.insertBefore(newElement, dest.firstChild);
+                // dest.appendChild(newElement);
+                fetchElement.removeChild(fetchElement.lastElementChild);
             }
+
+            function button13Click(){
+                let fetchElement=document.getElementById("div1");
+                let click=fetchElement.lastElementChild.textContent;
+                console.log(click);
+                let newElement= document.createElement("p");
+                let newText= document.createTextNode(click);
+                const dest= document.getElementById("div3");
+                
+                newElement.appendChild(newText);
+                dest.insertBefore(newElement, dest.firstChild);
+                // dest.appendChild(newElement);
+                fetchElement.removeChild(fetchElement.lastElementChild);
+            }
+
+            function button21Click(){
+                let fetchElement=document.getElementById("div2");
+                let click=fetchElement.lastElementChild.textContent;
+                console.log(click);
+                let newElement= document.createElement("p");
+                let newText= document.createTextNode(click);
+                const dest= document.getElementById("div1");
+                
+                newElement.appendChild(newText);
+                dest.insertBefore(newElement, dest.firstChild);
+                // dest.appendChild(newElement);
+                fetchElement.removeChild(fetchElement.lastElementChild);
+            }
+
+            function button23Click(){
+                let fetchElement=document.getElementById("div2");
+                let click=fetchElement.lastElementChild.textContent;
+                console.log(click);
+                let newElement= document.createElement("p");
+                let newText= document.createTextNode(click);
+                const dest= document.getElementById("div3");
+                
+                newElement.appendChild(newText);
+                dest.insertBefore(newElement, dest.firstChild);
+                // dest.appendChild(newElement);
+                fetchElement.removeChild(fetchElement.lastElementChild);
+            }
+
+            function button31Click(){
+                let fetchElement=document.getElementById("div3");
+                let click=fetchElement.lastElementChild.textContent;
+                console.log(click);
+                let newElement= document.createElement("p");
+                let newText= document.createTextNode(click);
+                const dest= document.getElementById("div1");
+                
+                newElement.appendChild(newText);
+                dest.insertBefore(newElement, dest.firstChild);
+                // dest.appendChild(newElement);
+                fetchElement.removeChild(fetchElement.lastElementChild);
+            }
+
+            function button32Click(){
+                let fetchElement=document.getElementById("div3");
+                let click=fetchElement.lastElementChild.textContent;
+                console.log(click);
+                let newElement= document.createElement("p");
+                let newText= document.createTextNode(click);
+                const dest= document.getElementById("div2");
+                
+                newElement.appendChild(newText);
+                dest.insertBefore(newElement, dest.firstChild);
+                // dest.appendChild(newElement);
+                fetchElement.removeChild(fetchElement.lastElementChild);
+            }
+
+            
 
         </script>
     </body>
