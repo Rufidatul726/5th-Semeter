@@ -27,7 +27,7 @@
     <body>
         
         <div id="div1">
-            <p id="p2"  >2</p>            
+            <p id="p2" >2</p>            
             <p id="p4" >4</p>           
             <p id="p3" >3</p>           
             <p id="p1" >1</p>
@@ -49,8 +49,24 @@
         <div id="d21" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button21Click()">2->1</button></div>
         <div id="d13" style="border: 1px solid black; width: 30%; float: left; height: 5%;"><button onclick="button13Click()">1->3</button></div>
 
-
+        <div>
+            <button onclick="isSort()">Check the Result!</button>
+        </div>
         <script>
+
+            const array= [1, 2, 3, 4];
+            function shuffle(array) {
+                array.sort(() => Math.random() - 0.5);
+                if(array[0]==1 && array[1]==2 && array[2]==3 && array[3]==4){
+                    shuffle(array);
+                }
+                let shuffleChild=document.getElementById("div1").firstElementChild.textContent;
+                let childElement= document.createElement("p");
+                let childText= array[0];
+                childElement.appendChild(childText);
+                shuffleChild.insertBefore(childElement, shuffleChild.lastElementChild);
+                console.log(shuffleChild);
+            }
             function button12Click(){
                 let fetchElement=document.getElementById("div1");
                 let click=fetchElement.lastElementChild.textContent;
@@ -135,6 +151,28 @@
                 fetchElement.removeChild(fetchElement.lastElementChild);
             }
 
+            function isSort(){
+                let flag=1;
+                let fetchElement=document.getElementById("div1");
+                let child=fetchElement.childNodes;
+                for(let i=0; i<4; i++){
+                    console.log(child[i].textContent);
+                    if(child[i].textContent==4-i){
+                        flag=1;
+                    }
+                    else{
+                        flag=0;
+                        break;
+                    }
+                }
+                
+                if(flag==1){
+                    alert("You Win");
+                }
+                else{
+                    alert("You Lose");
+                }
+            }
             
 
         </script>
