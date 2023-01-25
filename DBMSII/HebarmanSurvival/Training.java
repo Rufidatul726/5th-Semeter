@@ -22,7 +22,9 @@ public class Training {
     public static void main(String[] args) throws IOException {
 
         File file = new File("I:\\5th semester\\DBMS2\\trainUCIData.txt");
+        File file1= new File("I:\\5th semester\\DBMS2\\OutputUCI.txt")
         FileReader fr = new FileReader(file);
+        FileWriter fileWriter=new FileWriter(file1);
 
         BufferedReader br = new BufferedReader(fr);
 
@@ -81,6 +83,7 @@ public class Training {
 
             count++;
         }
+        fr.close();
 
         System.out.println("total Age:" + distinctage);
 
@@ -92,53 +95,25 @@ public class Training {
 
         for(i=0;i<distinctage;i++){
             System.out.println(negage[dAge[i]] + " " + no);
-            if(negage[dAge[i]]==0)probOfAge[i]=0.00;
-            else{
                 tempx=(double)posage[dAge[i]]/yes;
                 tempy=(double)negage[dAge[i]]/no ;
-                probOfAge[i] = tempx/tempy;
-            }
-            System.out.println( " Probability: "+probOfAge[i]);
+                fileWriter.append(dAge[i] + ":" + tempx + ":" + tempy+"\n");
         }
 
-//        while((line = br.readLine()) != null){
-//            tempArr = line.split(",");
-//            age[i]=Integer.parseInt(tempArr[0]);
-//
-//            year[i]=Integer.parseInt(tempArr[1]);
-//            nodes[i]=Integer.parseInt(tempArr[2]);
-//            status[i]=Integer.parseInt(tempArr[3]);
-//            if(status[i]==1){
-//                patient[age[i]][year[i]][nodes[i]]+=1;
-//                yes++;
-//            }
-//            else if(status[i]==2){
-//                patient1[age[i]][year[i]][nodes[i]]+=1;
-//                no++;
-//            }
-//            i++;
-//        }
-//        count=i;
-//        System.out.println("count" + count);
-//
-//        double[] probabilityYes=new double[310];
-//        double[] probabilityNo=new double[310];
-//        double[] probability=new double[310];
-//        int m=0;
-//
-//        for(i=0;i<count;i++){
-//            for(j=0;j<count;j++){
-//                for(k=0;k<count;k++){
-//                    if(patient1[i][j][k]!=0){
-//                        patient[i][j][k]=patient[i][j][k]/yes;
-//                        patient1[i][j][k]=patient1[i][j][k]/no;
-//                        probability[m]=patient[i][j][k]/(patient1[i][j][k]);
-//                        System.out.println("probability["+m+"]="+probability[m]);
-//                        m++;
-//                    }
-//                }
-//            }
-//        }
+        for(i=0;i<distinctyear;i++){
+            tempx=(double)posyear[dYear[i]]/yes;
+            tempy=(double)negyear[dYear[i]]/no ;
+            fileWriter.append(dYear[i] + ":" + tempx + ":" + tempy+"\n");
+        }
+
+        for(i=0;i<distinctNode;i++){
+            tempx=(double)posage[dYear[i]]/yes;
+            tempy=(double)negage[dYear[i]]/no ;
+            fileWriter.append(dYear[i] + ":" + tempx + ":" + tempy+"\n");
+        }
+
+
+
 
 
     }
