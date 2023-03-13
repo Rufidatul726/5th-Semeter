@@ -14,4 +14,12 @@ export class ItemListComponent implements OnInit{
     console.log(this.itemservice.getItems());
     this.myitems=this.itemservice.getItems();
   }
+
+  requestItem(name:string) : void{
+    alert("Item" + name + "Requested. ");
+  }
+
+  setItem(name:string):void{
+    this.itemservice.decrementonBuy(name);
+  }
 }
