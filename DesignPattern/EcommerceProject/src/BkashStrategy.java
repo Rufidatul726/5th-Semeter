@@ -1,12 +1,6 @@
 public class BkashStrategy implements PaymentStrategy {
     private String phoneNumber;
     private String pin;
-
-//    public BkashStrategy(String phoneNumber, String pin) {
-//        this.phoneNumber = phoneNumber;
-//        this.pin = pin;
-//    }
-
     public void processPayment(double amount) {
         System.out.println("Processing payment of " + amount + " with Bkash");
     }

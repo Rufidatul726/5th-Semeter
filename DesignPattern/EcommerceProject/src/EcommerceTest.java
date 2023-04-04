@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class EcommerceTest {
 
     public static void main(String[] args) {
@@ -41,8 +39,8 @@ public class EcommerceTest {
         customerTemplate.updateUserAccount("Sharif", "sharif@example.com", "password3", "Komlapur Bangladesh");
 
         customerTemplate.processOrder("Shirt", "sharif@example.com", "CreditCardStrategy");
-        customerTemplate.processOrder("Pants", "mkdl@example.com", "PaypalStrategy");
-        customerTemplate.processOrder("Shoes", "sharif@example.com", "BkashStrategy");
+//        customerTemplate.processOrder("Pants", "mkdl@example.com", "PaypalStrategy");
+//        customerTemplate.processOrder("Shoes", "sharif@example.com", "BkashStrategy");
 
     }
 

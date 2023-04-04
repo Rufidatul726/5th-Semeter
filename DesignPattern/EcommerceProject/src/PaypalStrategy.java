@@ -2,11 +2,6 @@ public class PaypalStrategy implements PaymentStrategy{
     private String email;
     private String password;
 
-//    public PaypalStrategy(String email, String password) {
-//        this.email = email;
-//        this.password = password;
-//    }
-
     public void processPayment(double amount) {
         System.out.println("Processing payment of " + amount + " with Paypal");
     }
