@@ -91,7 +91,8 @@ public class EcommerceMediator {
 
     public PaymentStrategy getPaymentStrategyByName(String name) {
         for (PaymentStrategy ps : paymentStrategies) {
-            if (ps.getClass().getName().equals("name")) {
+            if (ps.getClass().getName().equals(name)) {
+
                 return ps;
             }
         }
@@ -109,4 +110,5 @@ public class EcommerceMediator {
             System.out.println("Order failed! Product out of stock!");
         }
     }
+
 }
