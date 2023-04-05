@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
 import { BookService } from '../book.service';
 import { Book } from '../book';
 
@@ -22,9 +23,10 @@ export class UpdateBookInfoComponent {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.bookService.getBook(id).subscribe((book) => {
-      this.book = book;
-    });
+    console.log(id);
+    // this.bookService.getBook(id).subscribe((book) => {
+    //   this.book = book;
+    // });
   }
 
   onSubmit() {

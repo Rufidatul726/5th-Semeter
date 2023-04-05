@@ -24,6 +24,11 @@ export class CreatebookComponent {
       this.book = {} as Book;
     });
   }
+
+  onSubmit(): void {
+    console.log('submitted');
+  }
+
 }
   
 

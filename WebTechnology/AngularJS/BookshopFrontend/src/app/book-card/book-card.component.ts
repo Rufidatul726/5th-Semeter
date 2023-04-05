@@ -7,5 +7,5 @@ import { Book } from '../book';
   styleUrls: ['./book-card.component.css']
 })
 export class BookCardComponent {
-    @Input() book: Book;
+    @Input() book: Book | undefined;
 }

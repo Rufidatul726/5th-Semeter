@@ -10,14 +10,22 @@ import { Book } from '../book';
 })
 
 export class ShowBookDetailsComponent implements OnInit{
-  book: Book;
+  book: Book = {
+    id: '',
+    title: '',
+    author: '',
+    isbn: '',
+    cover: '',
+    description: ''
+  };
+
 
   constructor(private route: ActivatedRoute, private bookService: BookService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    this.bookService.getBook(id).subscribe((book) => {
-      this.book = book;
-    });
+    // this.bookService.getBook(id).subscribe((book) => {
+    //   this.book = book;
+    // });
   }
 }
