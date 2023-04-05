@@ -1,0 +1,11 @@
+<div class="card">
+    <img src="{{book.cover}}" alt="{{book.title}}">
+    <div class="info">
+      <h2>{{book.title}}</h2>
+      <p>{{book.author}}</p>
+      <p>ISBN: {{book.isbn}}</p>
+      <p>Description: {{book.description}}</p>
+      <button routerLink="/books/{{book.id}}/edit">Edit Book</button>
+    </div>
+  </div>
+  
