@@ -7,5 +7,12 @@ import { Book } from '../book';
   styleUrls: ['./book-card.component.css']
 })
 export class BookCardComponent {
-    @Input() book: Book | undefined;
+    @Input() book: Book = { 
+        id: '',
+        title: '',
+        isbn  : '',
+        author: '',
+        description: '',
+        cover: '',
+    };
 }

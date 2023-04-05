@@ -1,13 +1,24 @@
-<h1>Book Site</h1>
-<app-show-book-list >
-[books]="books" (select)="onSelect($event)"
-  (create)="onCreate()" (edit)="onEdit()" (delete)="onDelete($event)"
-</app-show-book-list> 
+<head>
+  <title>Book Site</title>
+  <link rel="stylesheet" href="./app.component.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
 
- <!-- <app-show-book-details [book]="selectedBook" (cancel)="onCancel()" (save)="onSave($event)"
-  [creating]="isCreating" [updating]="isUpdating">
-</app-show-book-details> -->
+<div class="homepage">
+    <app-navbar></app-navbar>
+    <h1>Booksite</h1>
+    <app-search-book-list></app-search-book-list>
+</div>
 
+ <div>
+  <app-show-book-list >[books]="books" (select)="onSelect($event)"
+    (create)="onCreate()" (edit)="onEdit()" (delete)="onDelete($event)"
+  </app-show-book-list> 
 
+  <app-createbook></app-createbook>
 
-<router-outlet></router-outlet>
+  <app-update-book-info></app-update-book-info>
+
+  <app-show-book-details></app-show-book-details>
+
+ </div>
