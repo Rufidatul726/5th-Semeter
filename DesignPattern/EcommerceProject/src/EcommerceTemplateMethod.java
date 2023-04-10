@@ -6,12 +6,9 @@ public abstract class EcommerceTemplateMethod {
         this.mediator = mediator;
     }
 
-    public void createUserAccount(String name, String email, String password, String address){
+    public void createUserAccount(String name, String password){}
 
-    }
-    public void updateUserAccount(String name, String email, String password, String address){
-
-    }
+    public void updateUserAccount(String name, String password){}
 
     public abstract void disPlayProductList();
 

@@ -5,10 +5,6 @@ public class BkashStrategy implements PaymentStrategy {
         System.out.println("Processing payment of " + amount + " with Bkash");
     }
 
-    public void handleRefund(double amount) {
-        System.out.println("Refunding " + amount + " to Bkash");
-    }
-
     public boolean verifyTransaction() {
         System.out.println("Verifying transaction with Bkash");
         return true;

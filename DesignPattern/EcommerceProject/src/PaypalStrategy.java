@@ -6,17 +6,9 @@ public class PaypalStrategy implements PaymentStrategy{
         System.out.println("Processing payment of " + amount + " with Paypal");
     }
 
-    public void handleRefund(double amount) {
-        System.out.println("Refunding " + amount + " to Paypal");
-    }
-
     public boolean verifyTransaction() {
         System.out.println("Verifying transaction with Paypal");
         return true;
-    }
-
-    public String toString() {
-        return "Email: " + email + ", Password: " + password;
     }
 
     public boolean equals(PaypalStrategy other) {

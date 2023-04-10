@@ -5,21 +5,18 @@ public class CustomerTemplateMethod extends EcommerceTemplateMethod{
         super(mediator);
     }
     @Override
-    public void createUserAccount(String name, String email, String password, String address) {
-        mediator.addUser(new User(name, email, password, address));
+    public void createUserAccount(String name, String password) {
+        mediator.addUser(new User(name, password));
     }
     @Override
-    public void updateUserAccount(String name, String email, String password, String address) {
-        User user = this.mediator.getUserByEmail(email);
+    public void updateUserAccount(String name, String password) {
+        User user = this.mediator.getUserByName(name);
         if(user != null){
             if (name != null) {
                 user.setName(name);
             }
             if (password != null) {
                 user.setPassword(password);
-            }
-            if (address != null) {
-                user.setAddress(address);
             }
             this.mediator.updateUser(user);
         }
@@ -48,9 +45,9 @@ public class CustomerTemplateMethod extends EcommerceTemplateMethod{
         }
     }
     @Override
-    public void processOrder(String productName, String email, String paymentStrategy) {
+    public void processOrder(String productName, String name, String paymentStrategy) {
         Product product = this.mediator.getProductByName(productName);
-        User user = this.mediator.getUserByEmail(email);
+        User user = this.mediator.getUserByName(name);
         PaymentStrategy strategy = this.mediator.getPaymentStrategyByName(paymentStrategy);
 
         if (product != null && user != null && strategy != null) {

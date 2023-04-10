@@ -57,25 +57,25 @@ public class EcommerceMediator {
         for (User u : users) {
             if (u.equals(user)) {
                 u.setName(user.getName());
-                u.setEmail(user.getEmail());
                 u.setPassword(user.getPassword());
-                u.setAddress(user.getAddress());
             }
         }
     }
+
 
     public List<User> getUsersList() {
         return this.users;
     }
 
-    public User getUserByEmail(String email) {
+    public User getUserByName(String name) {
         for (User u : users) {
-            if (u.getEmail().equals(email)) {
+            if (u.getName().equals(name)) {
                 return u;
             }
         }
         return null;
     }
+
 
     public void addPaymentStrategy(PaymentStrategy paymentStrategy) {
         paymentStrategies.add(paymentStrategy);
@@ -92,7 +92,6 @@ public class EcommerceMediator {
     public PaymentStrategy getPaymentStrategyByName(String name) {
         for (PaymentStrategy ps : paymentStrategies) {
             if (ps.getClass().getName().equals(name)) {
-
                 return ps;
             }
         }
@@ -104,7 +103,6 @@ public class EcommerceMediator {
             paymentStrategy.processPayment(product.getPrice());
             product.setInventory(product.getInventory() - 1);
             System.out.println("Order processed successfully! Payement of $" + product.getPrice() + " has been received. ");
-            System.out.println("A confirmation email has been sent to " + user.getEmail() + " with the details of the order.");
         }
         else {
             System.out.println("Order failed! Product out of stock!");

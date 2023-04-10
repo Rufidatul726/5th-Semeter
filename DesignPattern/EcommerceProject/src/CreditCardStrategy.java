@@ -13,10 +13,6 @@ public class CreditCardStrategy implements PaymentStrategy {
         System.out.println("Processing payment of " + amount + " with credit card");
     }
 
-    public void handleRefund(double amount) {
-        System.out.println("Refunding " + amount + " to credit card");
-    }
-
     public boolean verifyTransaction() {
         System.out.println("Verifying transaction with credit card");
         return true;
